@@ -1,0 +1,10 @@
+This section describes all the source code files included in the system. These files follow the HCC Embedded standard source tree system, described in the HCC Source Tree Guide. All references to file pathnames refer to locations within this standard source tree, not within the package you initially receive.
+Note: Do not modify any files except the configuration files.
+API Header Files
+
+These files in the directory src/api are the only files that should be included by an application using this module. For details of the API functions, see Application Programming Interface.
+
+api_usbd_audio.h	Base audio module API.
+api_usbd_audio_map.h	Audio map API.
+api_usbd_mic.h	Microphone API.
+api_usbd_speaker.h	Speaker API.
