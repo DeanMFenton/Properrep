@@ -24,14 +24,48 @@ To create offers on Sandbox, you have to:
 
 ` $publisherToken = 'YOUR_SANDBOX_PUBLISHER_TOKEN';`
 
-    which you can find in sandbox api-keys.
+which you can find in sandbox api-keys.
 
      
+2. Set endpoint to sandbox.
 
-    Set endpoint to sandbox.
+    By default in `Api.php` you can find:
 
-    By default in Api.php you can find:
+    `protected $endpoint = 'https://api.cleeng.com/3.0/json-rpc';` these are production servers
 
-    protected $endpoint = 'https://api.cleeng.com/3.0/json-rpc'; these are production servers
+    To set new endpoint, after you create a new API object you just have to add
 
+    `$cleengApi->enableSandbox();`
+
+    Like this:  
+
+``` 
+    $cleengApi = new Cleeng_Api();
+    $cleengApi->setPublisherToken($publisherToken);
+    $cleengApi->enableSandbox();
+```
+That's it! Now, you can create offers on Cleeng Sandbox platform.
+# 2.2 Protecting offer on Sandbox
+Changes you have to make in purchase.php:
+
+1.Set `offerId` that you created using Sandbox.
+
+2.Add `$cleengApi->enableSandbox();`
      
+```
+    $cleengApi = new Cleeng_Api();
+    $cleengApi->enableSandbox();
+```
+That's it!
+# 3. So, what has changed?
+
+Ok, now if you click on your Buy-Button (or link), and after you log in (not on current content publisher account, please create different one) you can choose Credit Card payment method. Enter below details in order to purchase for free!
+
+Payment data:
+
+* Card number: 5555 4444 3333 1111
+* Card name: any
+* Card date: 08 / 2018
+* CVC: 737
+
+Done, you are able to test the whole process of protecting and selling with Cleeng.
